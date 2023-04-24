@@ -392,11 +392,13 @@ input[type=range]::-moz-range-thumb {
         }
 
         &__label_range {
-            // &.form__label_range {
-            //     font-size: 12px!important;
-            //     line-height: 16px!important;  
-            // }
             font-size: 13px;
+            line-height: 16px;
+        }
+
+        &__label_text.focus {
+            top: -18px;
+            font-size: 12px;
             line-height: 16px;
         }
 
