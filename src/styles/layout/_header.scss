@@ -1,0 +1,150 @@
+.header {  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;  
+    background-color: rgba(16, 16, 29, 0.9);    
+    padding: 38px 0;
+    z-index: 1000;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-nav {
+        padding-top: 5px;
+        &__link {
+            font-size: 13px;
+            line-height: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 56px;
+            color: $white;
+            transition: all .25s;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            
+            @include hover($primary-dark, transparent, transparent);
+
+            &.active {
+                color: #43ABF0;
+                pointer-events: none;
+                cursor: default;
+            }
+        }
+
+        &__close {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .header {
+        padding: 26px 0;
+        &-nav {
+            padding-top: 0;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        padding: 26px 0;
+        &-logo {
+           width: 200px;
+           img {
+            max-width: 100%;
+           }
+        }
+        &-nav__link {
+            font-size: 12px;
+            line-height: 12px;
+            margin-right: 40px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        padding: 14px 0;
+        &-logo {
+           width: 160px;
+           img {
+            max-width: 100%;
+           }
+        }
+        &-nav {
+            transform: translateY(-5px);
+            &__link {
+                font-size: 10px;
+                line-height: 10px;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        &-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background: rgba(#282834, .99);
+            padding: 40px;
+            transform: translate(100%, 0);
+            transition: all .25s ease-in;
+
+            &.active {
+                transform: translate(0, 0);
+            }
+            &__link {
+                font-size: 16px;
+                line-height: 22px;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            &__close {
+                display: block;
+                position: absolute;
+                left: 40px;
+                top: 40px;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__menu {
+            display: block;
+            cursor: pointer;
+            width: 30px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+    
+}
+

@@ -1,0 +1,122 @@
+.footer {
+    padding: 31px 0;
+    background-color: #3D4050;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: $white;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__payment {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            img {
+                margin-right: 15px;
+            }
+
+            span {
+                color: $white;
+                transition: all .25s;
+                @include hover($primary, transparent, transparent);
+            }
+        }
+    }
+
+    &__line {
+        width: 1px;
+        height: 18px;
+        background-color: $white;
+    }
+}
+
+
+@media screen and (max-width: 1240px) {
+    .footer {
+        padding: 21px 0;
+        font-size: 11px;
+        line-height: 14px;
+        &__payment-item,
+        &__social-link {
+            margin-right: 30px;
+            img {
+                margin-right: 8px;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    .footer {
+        &__inner {
+           flex-wrap: wrap;
+        }
+
+        &__copyrights {
+            flex: 100%;
+            margin-bottom: 14px;
+        }
+
+        &__line {
+            display: none;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        font-size: 10px;
+        &__inner {
+           display: block;
+        }
+
+        &__copyrights,
+        &__payment {
+            margin-bottom: 14px;
+        }
+
+        &__payment-item,
+        &__social-link {
+            margin-right: 14px;
+            img {
+                margin-right: 6px;
+            }
+        }
+    }
+    
+}

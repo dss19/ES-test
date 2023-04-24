@@ -1,0 +1,15 @@
+// Colors
+$white: #ffffff;
+$black: #000000;
+$primary: #3E9CDC;
+$primary-dark: #286690;
+
+@mixin hover($color, $bg-color, $b-color) {
+    @media screen and (min-width: 767px) {
+        &:hover {
+            color: $color;
+            background-color: $bg-color;
+            border-color: $b-color;
+        }        
+    }
+}
